@@ -13,7 +13,7 @@ ENV SIAB_VERSION=2.19 \
   SIAB_SHELL=/bin/bash \
   SIAB_HOME=/home/geekyzk \
   SIAB_SUDO=true \
-  SIAB_SSL=true \
+  SIAB_SSL=false \
   SIAB_SERVICE=/:LOGIN \
   SIAB_PKGS=none \
   SIAB_SCRIPT=none
@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y openssl curl openssh-client sudo \
   ln -sf '/etc/shellinabox/options-enabled/01+Color Terminal.css' \
     /etc/shellinabox/options-enabled/01+Color-Terminal.css
 
-EXPOSE 4200
+EXPOSE 8080
 
 VOLUME /etc/shellinabox /var/log/supervisor /home
 
