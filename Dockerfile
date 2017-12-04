@@ -3,7 +3,7 @@ FROM ubuntu:xenial
 
 ENV SIAB_VERSION=2.19 \
   SIAB_USERCSS="Normal:+/etc/shellinabox/options-enabled/00+Black-on-White.css,Reverse:-/etc/shellinabox/options-enabled/00_White-On-Black.css;Colors:+/etc/shellinabox/options-enabled/01+Color-Terminal.css,Monochrome:-/etc/shellinabox/options-enabled/01_Monochrome.css" \
-  SIAB_PORT=8080 \
+  SIAB_PORT=80 \
   SIAB_ADDUSER=true \
   SIAB_USER=geekyzk \
   SIAB_USERID=1000 \
@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y openssl curl openssh-client sudo \
   ln -sf '/etc/shellinabox/options-enabled/01+Color Terminal.css' \
     /etc/shellinabox/options-enabled/01+Color-Terminal.css
 
-EXPOSE 8080
+EXPOSE 80
 
 VOLUME /etc/shellinabox /var/log/supervisor /home
 
